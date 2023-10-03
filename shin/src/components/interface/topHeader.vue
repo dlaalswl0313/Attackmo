@@ -18,11 +18,13 @@
                     </div>
                     <div class="search-box">
                         <img class="vector" src="@/images/search_icon.svg" />
-                        <div class="place-holder">
-                            <input @focus="searchingStart()" @keypress.enter="searchMovie()"
-                            type="text" name="searchMovie" class="inputText searchWrite"
-                            placeholder="영화, 인물을 검색해보세요">
-                        </div>
+                        <form action="/Search" method="get">
+                            <div class="place-holder">
+                                <input @focus="searchingStart()" @keypress.enter="searchMovie()"
+                                type="text" name="searchWord" class="inputText searchWrite"
+                                placeholder="영화, 인물을 검색해보세요">
+                            </div>
+                        </form>
                         <div v-if="isSearching" class="searchBar">
                             <searchBar/>
                         </div>
