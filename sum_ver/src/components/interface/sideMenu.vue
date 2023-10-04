@@ -70,9 +70,6 @@ export default {
         <div class="div-wrapper">
           <div class="normalFont">- 북마크</div>
         </div>
-        <div class="child">
-          <div class="normalFont">- 시사회</div>
-        </div>
     </div>
   </div>
   <div class="category">
@@ -87,9 +84,6 @@ export default {
     <div class="c-childs">
       <div class="child">
         <div class="normalFont">- 문의 게시판</div>
-      </div>
-      <div class="child">
-        <div class="normalFont">- 신고 게시판</div>
       </div>
     </div>
   </div>

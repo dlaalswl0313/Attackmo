@@ -1,10 +1,10 @@
 <script>
-import { RouterView } from 'vue-router';
+import { RouterView} from 'vue-router';
 import topHeader from './components/interface/topHeader.vue';
 import botFooter from './components/interface/botFooter.vue';
 import topAds from './components/AD/topAds.vue';
 import botAds from './components/AD/botAds.vue';
-import {ref, provide } from 'vue';
+import {ref, provide, onMounted } from 'vue';
 import {set} from './movieApi';
 
 
@@ -19,19 +19,26 @@ export default {
 
     const loginToggle = () => {
       const sessionStorage = window.sessionStorage;
-      if (( sessionStorage.getItem('login') == 'false' )) {
-        sessionStorage.setItem('login', true);
-        if ( sessionStorage.getItem('login') == 'false' ) isLogin.value = false;
-        if ( sessionStorage.getItem('login') == 'true' ) isLogin.value = true;
-        console.log('login is : '+sessionStorage.getItem('login'))
-      }else if (( sessionStorage.getItem('login') == 'true' )){
-        sessionStorage.setItem('login', false);
-        if ( sessionStorage.getItem('login') == 'false' ) isLogin.value = false;
-        if ( sessionStorage.getItem('login') == 'true' ) isLogin.value = true;
-        console.log('login is : '+sessionStorage.getItem('login'))
-      }
+      isLogin.value = !isLogin.value;
+      sessionStorage.setItem('login', isLogin.value);
+      console.log('login is = ' + sessionStorage.getItem('login'))
     }
-    // provide('loginToggle', loginToggle);
+    provide('loginToggle', loginToggle);
+
+
+    const isSiren = ref(true);
+
+    onMounted(() => {
+      if (location.href.split("/")[3] == 'Siren') {
+        isSiren.value = false;
+      } else {
+        isSiren.value = true;
+      }
+    })
+
+    return{
+      isSiren
+    }
   }
 }
 
@@ -39,25 +46,25 @@ export default {
 
 <template>
   <!-- 최상단으로 버튼 -->
-  <div id="topBt">
+  <div v-if="isSiren" id="topBt">
     <a href="#">
       <img src="@/images/topBt.svg">
     </a>
   </div>
 
   <!-- 상단광고 위치 -->
-  <section>
+  <section v-if="isSiren">
     <topAds/>
   </section>
 
   <!-- 헤더 -->
-  <topHeader/>
+  <topHeader v-if="isSiren"/>
 
   <!-- 컨텐츠 -->
   <RouterView />
 
   <!-- 하단광고 위치 -->
-  <section>
+  <section v-if="isSiren">
     <botAds/>
   </section>
 

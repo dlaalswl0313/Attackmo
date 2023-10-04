@@ -1,5 +1,5 @@
 <template>
-     <div class="footer">
+     <div v-if="isSiren" class="footer">
       <div class="footer-container">
         <div class="navbar">
           <div class="normalFont">이용약관</div>
@@ -22,8 +22,22 @@
 </template>
 
 <script>
-export default{
-    name:'botFooter'
+import { ref, onMounted } from 'vue'
+export default {
+  name: 'botFooter',
+  setup() {
+    const isSiren = ref(true);
+
+    onMounted(() => {
+      if (location.href.split("/")[3] === 'Siren') {
+        isSiren.value = false;
+      } else {
+        isSiren.value = true;
+      }
+    })
+
+    return {isSiren}
+  }
 }
 </script>
 

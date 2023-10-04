@@ -40,7 +40,7 @@
                     <RouterLink to="/MovieMain"><div class="menuName">영화</div></RouterLink>
                 </div>
                 <div class="menu">
-                    <div class="menuName">리뷰</div>
+                    <RouterLink to="/ReviewBoard"><div class="menuName">리뷰</div></RouterLink>
                 </div>
                 <div class="menu">
                     <div class="menuName">공지사항</div>
@@ -61,8 +61,8 @@
 </template>
 
 <script>
-import {useRouter} from 'vue-router';
-import {ref, provide, inject} from 'vue';
+import {useRouter, useRoute} from 'vue-router';
+import {ref, provide, inject, onMounted, onBeforeMount} from 'vue';
 import sideMenu from '../interface/sideMenu.vue';
 import subMenu from '../interface/subMenu.vue';
 import searchBar from '../interface/searchBar.vue';
@@ -72,8 +72,9 @@ export default {
         sideMenu, subMenu, searchBar
     },
     setup(){
-        const loginToggle = inject('loginToggle');
         const isLogin = inject('isLogin');
+        const loginToggle = inject('loginToggle');
+
 
         const isSlideMenuToggle = ref(false);
         const isSearching = ref(false);
@@ -213,13 +214,12 @@ export default {
         provide('sideMenuOpen',sideMenuOpen);
         provide('searchingStart',searchingStart);
         
-        
 
         return {isSlideMenuToggle, sideMenuOpen,
               isSearching, searchingStart,
               isMobileSearch, searchMobile,
               isTabletSearching, isMenuHover, MenuHover, MenuLeave,
-              searchMovie, router, loginToggle, isLogin};
+              searchMovie, router, isLogin, loginToggle};
     }
 }
 </script>

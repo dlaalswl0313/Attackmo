@@ -13,14 +13,23 @@ export default{
         const tabletPath = ref('');
         const mobilePath = ref('');
 
+        const isSiren = ref(true);
+
         onMounted(()=>{
             const random = Math.floor(Math.random()*4)+1;
             pcPath.value = '/src/images/botAd/botAd'+random+'.png'
             tabletPath.value = '/src/images/botAd/botAd'+random+'.png'
             mobilePath.value = '/src/images/botAd/botAd'+random+'.png'
+
+
+            if (location.href.split("/")[3] == 'Siren') {
+                isSiren.value = false;
+            } else {
+                isSiren.value = true;
+            }
         })
 
-        return {pcPath, tabletPath, mobilePath}
+        return {pcPath, tabletPath, mobilePath, isSiren}
     }
 }
 </script>
