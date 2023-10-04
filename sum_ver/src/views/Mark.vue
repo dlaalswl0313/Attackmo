@@ -56,6 +56,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import url('../assets/css/mark.css');
 </style>
