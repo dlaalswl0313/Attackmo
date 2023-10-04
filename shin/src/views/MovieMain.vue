@@ -66,7 +66,7 @@
       <div class="div">
         <div class="title">
           <div class="mainTitle">기대작</div>
-          <div class="plusBt">+</div>
+          <div class="plusBt"><RouterLink to="/Mcoming">+</RouterLink></div>
         </div>
         <div class="cont">
           <div class="poster-box">

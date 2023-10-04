@@ -78,8 +78,11 @@
     line-height: normal;
   }
   @media(max-width:490px){
-    .screen .plusBt{display:none;}
+    .screen
+     .plusBt{display:none;}
   }
+
+  .screen .plusBt a { color:black; }
   
   .screen .cont {
     display: flex;
