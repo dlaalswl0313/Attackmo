@@ -157,6 +157,7 @@
     line-height: normal;
     white-space: nowrap;
   }
+  .div-wrapper .div a{ color:black; }
   
   .div-wrapper .posters {
     display: flex;

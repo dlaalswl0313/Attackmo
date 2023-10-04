@@ -32,7 +32,7 @@
       <div class="top">
         <div class="frame">
           <div class="title">인기 TOP 10</div>
-          <div class="div" id="top10Plus">+</div>
+          <div class="div" id="top10Plus"><router-link to="/MovieMain">+</router-link></div>
         </div>
         <div class="posters">
           <RouterLink to="/MovieTitle" class="link">
@@ -46,7 +46,7 @@
       <div class="top">
         <div class="frame">
           <div class="title">상영중인 영화</div>
-          <div class="div">+</div>
+          <div class="div"><router-link to="/Mnow">+</router-link></div>
         </div>
         <div class="posters">
           <img class="rectangle-2" src="../images/Rectangle 618.png" />

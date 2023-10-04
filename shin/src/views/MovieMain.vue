@@ -3,7 +3,6 @@
       <div class="div">
         <div class="title">
           <div class="mainTitle">인기 TOP 10</div>
-          <div class="plusBt">+</div>
         </div>
         <div class="cont">
           <div class="poster-box">
@@ -128,7 +127,7 @@
           </div>
         </div>
       </div>
-      <div class="div">
+      <div v-if="isLogin" class="div">
         <div class="title">
           <div class="mainTitle">추천리스트</div>
           <div class="plusBt">+</div>
