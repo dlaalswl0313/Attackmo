@@ -36,27 +36,52 @@ const router = createRouter({
     {
       path: '/Info',
       name: 'Info',
-      component: () => import('../views/Info.vue')
+      component: () => import('../views/Info.vue'),
+      beforeEnter: (to, from, next) => {
+        const sessionStorage = window.sessionStorage;
+        if( sessionStorage.getItem('login') === 'false' ) return alert('로그인이 필요합니다.')
+        else return next();
+      }
     },
     {
       path:'/RecHistory',
       name:'RecHistory',
-      component: () => import('../views/RecHistory.vue')
+      component: () => import('../views/RecHistory.vue'),
+      beforeEnter: (to, from, next) => {
+        const sessionStorage = window.sessionStorage;
+        if( sessionStorage.getItem('login') === 'false' ) return alert('로그인이 필요합니다.')
+        else return next();
+      }
     },
     {
       path:'/Mark',
       name:'Mark',
-      component: () => import('../views/Mark.vue')
+      component: () => import('../views/Mark.vue'),
+      beforeEnter: (to, from, next) => {
+        const sessionStorage = window.sessionStorage;
+        if( sessionStorage.getItem('login') === 'false' ) return alert('로그인이 필요합니다.')
+        else return next();
+      }
     },
     {
       path:'/Like',
       name:'Like',
-      component: () => import('../views/Like.vue')
+      component: () => import('../views/Like.vue'),
+      beforeEnter: (to, from, next) => {
+        const sessionStorage = window.sessionStorage;
+        if( sessionStorage.getItem('login') === 'false' ) return alert('로그인이 필요합니다.')
+        else return next();
+      }
     },
     {
       path:'/Rwrite',
       name:'Rwrite',
-      component: () => import('../views/Rwrite.vue')
+      component: () => import('../views/Rwrite.vue'),
+      beforeEnter: (to, from, next) => {
+        const sessionStorage = window.sessionStorage;
+        if( sessionStorage.getItem('login') === 'false' ) return alert('로그인이 필요합니다.')
+        else return next();
+      }
     },
     {
       path:'/ReviewBoard',
@@ -76,7 +101,12 @@ const router = createRouter({
     {
       path:'/Siren',
       name:'Siren',
-      component: () => import('../views/SirenPop.vue')
+      component: () => import('../views/SirenPop.vue'),
+      beforeEnter: (to, from, next) => {
+        const sessionStorage = window.sessionStorage;
+        if( sessionStorage.getItem('login') === 'false' ) return alert('로그인이 필요합니다.')
+        else return next();
+      }
     },
     {
       path:"/login",

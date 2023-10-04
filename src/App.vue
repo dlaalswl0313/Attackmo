@@ -29,6 +29,9 @@ export default {
     const isSiren = ref(true);
 
     onMounted(() => {
+      const sessionStorage = window.sessionStorage;
+      sessionStorage.setItem('login', isLogin.value);
+
       if (location.href.split("/")[3] == 'Siren') {
         isSiren.value = false;
       } else {

@@ -92,7 +92,7 @@ methods: {
   },
 };
 </script>
-<style>
+<style scoped>
     #wrap{
         display: flex;
         margin-top: 130px;

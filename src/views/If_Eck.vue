@@ -28,7 +28,7 @@ export default{
       }
   }
 </script>
-<style>
+<style scoped>
     #wrap{
         display: flex;
         margin-top: 140px;
