@@ -110,10 +110,11 @@ export default{
     setup(){
 
       const router = useRouter();
+      const path = router.currentRoute.value.path;
 
       onMounted(()=>{
         window.addEventListener('resize', function(){
-          if( this.window.innerWidth <= 1194 ){
+          if( path == '/Search' && this.window.innerWidth <= 1194 ){
             router.push('/')
           }
         })

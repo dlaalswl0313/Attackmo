@@ -232,6 +232,21 @@
   @media(max-width:490px){
     .content .trailer-template{gap:10px;}
   }
+
+  ::-webkit-scrollbar{
+    height:8px;
+    background: gray;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background:#454545;
+    border-radius: 10px;
+  }
+  @media(max-width:490px){
+    ::-webkit-scrollbar{
+      height:0px;
+    }
+  }
   
   .content .trailerBox {
     flex-direction: column;
