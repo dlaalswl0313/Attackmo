@@ -49,7 +49,7 @@
                     <div class="menuName">문의사항</div>
                 </div>
                 <div class="menu">
-                    <div class="menuName">마이페이지</div>
+                    <RouterLink to="/Info"><div class="menuName">마이페이지</div></RouterLink>
                 </div>
             </div>
             <subMenu v-if="isMenuHover" @mouseleave="MenuLeave()"/>

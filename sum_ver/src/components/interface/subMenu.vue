@@ -9,9 +9,9 @@
         </div>
         <img class="line" src="@/images/subMenuLine.svg" />
         <div class="div">
-          <div class="navBt">리뷰</div>
-          <div class="navBt">좋아요</div>
-          <div class="navBt">북마크</div>
+          <RouterLink to="/ReviewBoard"><div class="navBt">리뷰</div></RouterLink>
+          <RouterLink to="/Like"><div class="navBt">좋아요</div></RouterLink>
+          <RouterLink to="/Mark"><div class="navBt">북마크</div></RouterLink>
         </div>
         <img class="line" src="@/images/subMenuLine.svg" />
         <div class="div"><div class="navBt">공지사항</div></div>
@@ -19,8 +19,8 @@
         <div class="div"><div class="navBt">문의사항</div></div>
         <img class="line" src="@/images/subMenuLine.svg" />
         <div class="div">
-          <div class="navBt">내 정보</div>
-          <div class="navBt">추천 기록</div>
+          <RouterLink to="/Info"><div class="navBt">내 정보</div></RouterLink>
+          <RouterLink to="/RecHistory"><div class="navBt">추천 기록</div></RouterLink>
         </div>
       </div>
     </div>

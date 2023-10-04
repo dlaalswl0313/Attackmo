@@ -1,18 +1,18 @@
 <script>
 import { inject } from 'vue'
+import { RouterLink } from 'vue-router';
 export default {
-  name: 'sideMenu',
-  setup() {
-    const isSlideMenuToggle = inject('isSlideMenuToggle');
-    const sideMenuOpen = inject('sideMenuOpen');
-
-    const loginToggle = inject('loginToggle');
-    const loginCheck = inject('loginCheck');
-    const isLogin = inject('isLogin');
-
-    return { isSlideMenuToggle, sideMenuOpen,
-            loginToggle, loginCheck, isLogin }
-  }
+    name: 'sideMenu',
+    setup() {
+        const isSlideMenuToggle = inject('isSlideMenuToggle');
+        const sideMenuOpen = inject('sideMenuOpen');
+        const loginToggle = inject('loginToggle');
+        const loginCheck = inject('loginCheck');
+        const isLogin = inject('isLogin');
+        return { isSlideMenuToggle, sideMenuOpen,
+            loginToggle, loginCheck, isLogin };
+    },
+    components: { RouterLink }
 }
 </script>
 
@@ -21,7 +21,7 @@ export default {
     <div class="top-side">
       <RouterLink to="/"><img class="LOGO" src="@/images/LOGO.svg" /></RouterLink>
       <div class="frame">
-        <img class="person-icon" src="@/images/personicon.svg" />
+        <RouterLink to="/Info"><img class="person-icon" src="@/images/personicon.svg" /></RouterLink>
         <div class="loginWrapper">
           <div v-if="!isLogin" @click="loginToggle()" style="cursor:pointer;">로그인</div>
           <div v-if="isLogin" @click="loginToggle()" style="cursor:pointer;">로그아웃</div> /
