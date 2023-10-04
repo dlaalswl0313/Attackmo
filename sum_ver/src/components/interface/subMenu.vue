@@ -14,9 +14,9 @@
           <RouterLink to="/Mark"><div class="navBt">북마크</div></RouterLink>
         </div>
         <img class="line" src="@/images/subMenuLine.svg" />
-        <div class="div"><div class="navBt">공지사항</div></div>
+        <div class="div"><RouterLink to="/NoticeList"><div class="navBt">공지사항</div></RouterLink></div>
         <img class="line" src="@/images/subMenuLine.svg" />
-        <div class="div"><div class="navBt">문의사항</div></div>
+        <div class="div"><RouterLink to="/AskMe"><div class="navBt">문의사항</div></RouterLink></div>
         <img class="line" src="@/images/subMenuLine.svg" />
         <div class="div">
           <RouterLink to="/Info"><div class="navBt">내 정보</div></RouterLink>

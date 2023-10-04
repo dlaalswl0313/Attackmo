@@ -8,7 +8,7 @@
                   <input type="email" placeholder="이메일" v-model="user_email" id="email-new">
                   <input type="password" placeholder="비밀번호" v-model="user_pw" id="pw-new">
                   <!-- <button @click="togo" @keyup="togo" id="login_bt">로그인</button>   -->
-                  <button @click="login" id="login_bt">로그인</button> 
+                  <button @click="login()" id="login_bt">로그인</button> 
               
                     <div id="find">
                         <label><a href="./FindE">ID</a><a href="./FindP">/PW찾기</a></label>
@@ -25,32 +25,39 @@
 </template>
 <script>
 //import axios from 'axios';
-import { onMounted, ref } from 'vue';
-
+import { inject } from 'vue';
+import { useRouter } from 'vue-router';
 export default {
   setup(){
-    
-    const isLogin = ref(false);
 
-    const login = () => {
-      const sessionStorage = window.sessionStorage;
-      if( sessionStorage.getItem('login') === 'false' ){
-        sessionStorage.setItem('login', true);
-        isLogin.value = true;
+    const isLogin = inject('isLogin');
+    const loginToggle = inject('loginToggle');
+    const router = useRouter();
 
-        console.log('login is : ' + sessionStorage.getItem('login'));
-      }else{
-        sessionStorage.setItem('login', false);
-        isLogin.value = false;
-
-        console.log('login is : ' + sessionStorage.getItem('login'));
-      }
+    const login = () =>{
+      loginToggle();
+      router.push('/')
     }
 
-    onMounted(() => {
-      const sessionStorage = window.sessionStorage;
-      sessionStorage.setItem('login', false);
-    })
+    // const login = () => {
+    //   const sessionStorage = window.sessionStorage;
+    //   if( sessionStorage.getItem('login') === 'false' ){
+    //     sessionStorage.setItem('login', true);
+    //     isLogin.value = true;
+
+    //     console.log('login is : ' + sessionStorage.getItem('login'));
+    //   }else{
+    //     sessionStorage.setItem('login', false);
+    //     isLogin.value = false;
+
+    //     console.log('login is : ' + sessionStorage.getItem('login'));
+    //   }
+    // }
+
+    // onMounted(() => {
+    //   const sessionStorage = window.sessionStorage;
+    //   sessionStorage.setItem('login', false);
+    // })
 
     return { login, isLogin }
   }

@@ -5,16 +5,19 @@
                 <routerLink to="/"><img class="LOGO" src="@/images/LOGO.svg" /></routerLink>
                 <div class="inter-b-ox">
                     <div class="div">
-                        <div @click="loginToggle()" v-if="!isLogin" class="normalFont"
-                        style="cursor:pointer">
-                            로그인
-                        </div>
-                        <div @click="loginToggle()" v-if="isLogin" class="normalFont"
-                        style="cursor:pointer">
+                        <RouterLink to="/login">
+                            <div v-if="!isLogin" class="normalFont" style="cursor:pointer">
+                                로그인
+                            </div>
+                        </RouterLink>
+                        <div v-if="isLogin" @click="loginToggle()" class="normalFont" style="cursor:pointer">
                             로그아웃
                         </div>
                         <div class="normalFont">/</div>
-                        <div class="normalFont">회원가입</div>
+                        
+                        <RouterLink to="/signup">
+                            <div class="normalFont">회원가입</div>
+                        </RouterLink>
                     </div>
                     <div class="search-box">
                         <img class="vector" src="@/images/search_icon.svg" />
@@ -43,10 +46,10 @@
                     <RouterLink to="/ReviewBoard"><div class="menuName">리뷰</div></RouterLink>
                 </div>
                 <div class="menu">
-                    <div class="menuName">공지사항</div>
+                    <RouterLink to="/NoticeList"><div class="menuName">공지사항</div></RouterLink>
                 </div>
                 <div class="menu">
-                    <div class="menuName">문의사항</div>
+                    <RouterLink to="/AskMe"><div class="menuName">문의사항</div></RouterLink>
                 </div>
                 <div class="menu">
                     <RouterLink to="/Info"><div class="menuName">마이페이지</div></RouterLink>
@@ -72,9 +75,9 @@ export default {
         sideMenu, subMenu, searchBar
     },
     setup(){
-        const isLogin = inject('isLogin');
-        const loginToggle = inject('loginToggle');
 
+        const loginToggle = inject('loginToggle');
+        const isLogin = inject('isLogin');
 
         const isSlideMenuToggle = ref(false);
         const isSearching = ref(false);
@@ -219,7 +222,7 @@ export default {
               isSearching, searchingStart,
               isMobileSearch, searchMobile,
               isTabletSearching, isMenuHover, MenuHover, MenuLeave,
-              searchMovie, router, isLogin, loginToggle};
+              searchMovie, router, isLogin };
     }
 }
 </script>

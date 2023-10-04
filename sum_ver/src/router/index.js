@@ -99,11 +99,6 @@ const router = createRouter({
       component:()=>import('@/views/Anotice.vue')
     },
     {
-      path:"/Anotice",
-      name:"anotice",
-      component:()=>import('@/views/Anotice.vue')
-    },
-    {
       path:"/InfoEdit",
       name:"InfoEdit",
       component:()=>import('@/views/InfoEdit.vue')
