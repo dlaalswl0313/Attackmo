@@ -5,11 +5,11 @@
                 <routerLink to="/"><img class="LOGO" src="@/images/LOGO.svg" /></routerLink>
                 <div class="inter-b-ox">
                     <div class="div">
-                        <div v-if="!isLogin" @click="loginToggle()" class="normalFont"
+                        <div @click="loginToggle()" v-if="!isLogin" class="normalFont"
                         style="cursor:pointer">
                             로그인
                         </div>
-                        <div v-if="isLogin" @click="loginToggle()" class="normalFont"
+                        <div @click="loginToggle()" v-if="isLogin" class="normalFont"
                         style="cursor:pointer">
                             로그아웃
                         </div>
@@ -62,7 +62,7 @@
 
 <script>
 import {useRouter} from 'vue-router';
-import {ref, provide, inject, watchEffect} from 'vue';
+import {ref, provide, inject} from 'vue';
 import sideMenu from '../interface/sideMenu.vue';
 import subMenu from '../interface/subMenu.vue';
 import searchBar from '../interface/searchBar.vue';
@@ -72,8 +72,9 @@ export default {
         sideMenu, subMenu, searchBar
     },
     setup(){
+        const loginToggle = inject('loginToggle');
+        const isLogin = inject('isLogin');
 
-        
         const isSlideMenuToggle = ref(false);
         const isSearching = ref(false);
         const isMobileSearch = ref(false);
@@ -81,10 +82,6 @@ export default {
         const isMenuHover = ref(false);
 
         const router = useRouter();
-
-        const loginToggle = inject('loginToggle');
-        const loginCheck = inject('loginCheck');
-        const isLogin = inject('isLogin');
 
         const MenuHover = () => {
             isMenuHover.value = true;
@@ -215,18 +212,14 @@ export default {
         provide('isSlideMenuToggle',isSlideMenuToggle);
         provide('sideMenuOpen',sideMenuOpen);
         provide('searchingStart',searchingStart);
-
-
-        watchEffect(()=>{
-            
-        })
-
+        
+        
 
         return {isSlideMenuToggle, sideMenuOpen,
               isSearching, searchingStart,
               isMobileSearch, searchMobile,
               isTabletSearching, isMenuHover, MenuHover, MenuLeave,
-              searchMovie, router, loginToggle, loginCheck, isLogin};
+              searchMovie, router, loginToggle, isLogin};
     }
 }
 </script>

@@ -4,7 +4,7 @@ import topHeader from './components/interface/topHeader.vue';
 import botFooter from './components/interface/botFooter.vue';
 import topAds from './components/AD/topAds.vue';
 import botAds from './components/AD/botAds.vue';
-import {ref, provide} from 'vue';
+import {ref, provide } from 'vue';
 import {set} from './movieApi';
 
 
@@ -15,28 +15,23 @@ export default {
     console.log(set);
 
     const isLogin = ref(false);
+    provide('isLogin', isLogin);
 
     const loginToggle = () => {
+      const sessionStorage = window.sessionStorage;
       if (( sessionStorage.getItem('login') == 'false' )) {
         sessionStorage.setItem('login', true);
-        loginCheck();
+        if ( sessionStorage.getItem('login') == 'false' ) isLogin.value = false;
+        if ( sessionStorage.getItem('login') == 'true' ) isLogin.value = true;
         console.log('login is : '+sessionStorage.getItem('login'))
       }else if (( sessionStorage.getItem('login') == 'true' )){
         sessionStorage.setItem('login', false);
-        loginCheck();
+        if ( sessionStorage.getItem('login') == 'false' ) isLogin.value = false;
+        if ( sessionStorage.getItem('login') == 'true' ) isLogin.value = true;
         console.log('login is : '+sessionStorage.getItem('login'))
       }
     }
-
-    const loginCheck = () =>{
-      if ( sessionStorage.getItem('login') == 'false' ) isLogin.value = false;
-      if ( sessionStorage.getItem('login') == 'true' ) isLogin.value = true;
-    }
-
-    
-    provide('loginCheck', loginCheck)
-    provide('loginToggle', loginToggle);
-    provide('isLogin', isLogin);
+    // provide('loginToggle', loginToggle);
   }
 }
 
