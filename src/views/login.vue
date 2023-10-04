@@ -36,7 +36,7 @@ export default {
 
     const login = () =>{
       loginToggle();
-      router.push('/')
+      router.go(-1);
     }
 
     // const login = () => {
