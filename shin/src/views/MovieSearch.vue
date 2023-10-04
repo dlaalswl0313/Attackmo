@@ -103,8 +103,8 @@
 </template>
 
 <script>
-import { onMounted } from 'vue';
 import {useRouter} from 'vue-router';
+import {onMounted} from 'vue'
 export default{
     name:'MovieSearch',
     setup(){
@@ -113,11 +113,14 @@ export default{
       const path = router.currentRoute.value.path;
 
       onMounted(()=>{
-        window.addEventListener('resize', function(){
-          if( path == '/Search' && this.window.innerWidth <= 1194 ){
-            router.push('/')
-          }
-        })
+        const query = router.currentRoute.value.query.searchWord;
+        console.log(query);
+      })
+
+      window.addEventListener('resize', function(){
+        if( path == '/Search' && this.window.innerWidth <= 1194 ){
+          router.push('/')
+        }
       })
     }
 }
