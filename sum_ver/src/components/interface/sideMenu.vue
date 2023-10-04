@@ -23,18 +23,18 @@ export default {
       <div class="frame">
         <RouterLink to="/Info"><img class="person-icon" src="@/images/personicon.svg" /></RouterLink>
         <div class="loginWrapper">
-          <div v-if="!isLogin" @click="loginToggle()" style="cursor:pointer;">로그인</div>
+          <RouterLink to="/login"><div v-if="!isLogin" style="cursor:pointer;">로그인</div></RouterLink>
           <div v-if="isLogin" @click="loginToggle()" style="cursor:pointer;">로그아웃</div> /
-          <div>회원가입</div>
+          <RouterLink to="/signup"><div>회원가입</div></RouterLink>
         </div>
       </div>
     </div>
     <div class="frame2">
       <img class="person-icon" src="@/images/personicon.svg" />
       <div class="loginWrapperMobile">
-        <div v-if="!isLogin" @click="loginToggle()" style="cursor:pointer;">로그인</div>
+        <RouterLink to="/login"><div v-if="!isLogin" style="cursor:pointer;">로그인</div></RouterLink>
         <div v-if="isLogin" @click="loginToggle()" style="cursor:pointer;">로그아웃</div> /
-        <div>회원가입</div>
+        <RouterLink to="/signup"><div>회원가입</div></RouterLink>
       </div>
     </div>
     <div class="category">
@@ -57,35 +57,36 @@ export default {
       </div>
     </div>
     <div class="category">
-      <div class="c-title">
-        <div class="div">리뷰</div>
-      </div>
+      <RouterLink to="/ReviewBoard">
+        <div class="c-title">
+          <div class="div">리뷰</div>
+        </div>
+      </RouterLink>
       <div class="c-childs">
         <div class="child">
-          <div class="normalFont">- 리뷰페이지</div>
+          <RouterLink to="/ReviewBoard"><div class="normalFont">- 리뷰페이지</div></RouterLink>
         </div>
         <div class="child">
-          <div class="normalFont">- 좋아요</div>
+          <RouterLink to="/Like"><div class="normalFont">- 좋아요</div></RouterLink>
         </div>
-        <div class="div-wrapper">
-          <div class="normalFont">- 북마크</div>
+        <div class="child">
+          <RouterLink to="/Mark"><div class="normalFont">- 북마크</div></RouterLink>
         </div>
     </div>
   </div>
   <div class="category">
-    <div class="c-title">
-      <div class="div">공지사항</div>
-    </div>
-  </div>
-  <div class="category">
-    <div class="c-title">
-      <div class="div">문의사항</div>
-    </div>
-    <div class="c-childs">
-      <div class="child">
-        <div class="normalFont">- 문의 게시판</div>
+    <RouterLink to="/NoticeList">
+      <div class="c-title">
+        <div class="div">공지사항</div>
       </div>
-    </div>
+    </RouterLink>
+  </div>
+  <div class="category">
+    <RouterLink to="/AskMe">
+      <div class="c-title">
+        <div class="div">문의사항</div>
+      </div>
+    </RouterLink>
   </div>
 </div>
 <div @click="sideMenuOpen()" class="darkBG"></div></template>

@@ -147,12 +147,7 @@ const router = createRouter({
       path:"/Adnotice",
       name:"Adnotice",
       component:()=>import('@/views/Adnotice.vue')
-    },
-    {
-      path:"/Test",
-      name:"Test",
-      component:()=>import('@/views/Test.vue')
-    },    
+    }  
   ]
 })
 

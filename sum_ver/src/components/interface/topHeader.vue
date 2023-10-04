@@ -222,7 +222,7 @@ export default {
               isSearching, searchingStart,
               isMobileSearch, searchMobile,
               isTabletSearching, isMenuHover, MenuHover, MenuLeave,
-              searchMovie, router, isLogin };
+              searchMovie, router, isLogin, loginToggle };
     }
 }
 </script>

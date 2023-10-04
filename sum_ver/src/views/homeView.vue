@@ -58,7 +58,7 @@
       <div v-if="isLogin" class="top">
         <div class="frame">
           <div class="title">당신의 취향은?</div>
-          <div class="div">+</div>
+          <RouterLink to="/RecHistory"><div class="div">+</div></RouterLink>
         </div>
         <div class="posters">
           <img class="rectangle" src="../images/Rectangle 698.png" />

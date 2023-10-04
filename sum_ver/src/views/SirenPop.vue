@@ -42,7 +42,7 @@
 export default {
   mounted() {
     // 팝업 창이 로드될 때, 부모 창에 메시지를 보냅니다.
-    window.opener.postMessage('팝업 창이 로드되었습니다.', '*');
+    // window.opener.postMessage('팝업 창이 로드되었습니다.', '*');
     
   },
   methods: {
@@ -67,8 +67,10 @@ export default {
 #wrap div{
     font-size:17px;
     padding:20px 0;
-    border-top:1px solid #ccc;
     border-bottom:1px solid #ccc;
+}
+#wrap div:first-child{
+    border-top:1px solid #ccc;
 }
 #wrap div label{
     margin-left:10px;

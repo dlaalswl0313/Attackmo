@@ -1,5 +1,7 @@
 *{text-decoration: none;}
 
+
+
 .side-menu {
     display: flex;
     flex-direction: column;
@@ -102,6 +104,8 @@
     width: 100%;
     flex: 0 0 auto;
   }
+
+  .category a{ width:100%;}
   
   .side-menu .c-title {
     gap: 10px;

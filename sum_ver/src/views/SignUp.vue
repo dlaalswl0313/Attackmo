@@ -31,13 +31,19 @@
              </div>
              <div id="button_box">
                 <button type="submit" id="sign" class="bt">가입하기</button>
-                <button type="button" id="cancel" class="bt">취소</button>
+                <button @click="goBack" type="button" id="cancel" class="bt">취소</button>
              </div>
         </form>
     </div>
 </template>
 <script>
+import { useRouter } from 'vue-router';
 export default {
+  setup(){
+    const router = useRouter();
+    const goBack = () => router.go(-1);
+    return {goBack}
+  },  
   data(){
     return{
       formData:{

@@ -125,6 +125,8 @@ export default {
 }
 .floating_button{
     display:flex;
+    align-items: center;
+    justify-content: center;
     width: 30px;
     height: 30px;
     background:gold;
