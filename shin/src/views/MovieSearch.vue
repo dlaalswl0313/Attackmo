@@ -103,10 +103,21 @@
 </template>
 
 <script>
+import { onMounted } from 'vue';
+import {useRouter} from 'vue-router';
 export default{
     name:'MovieSearch',
     setup(){
 
+      const router = useRouter();
+
+      onMounted(()=>{
+        window.addEventListener('resize', function(){
+          if( this.window.innerWidth <= 1194 ){
+            router.push('/')
+          }
+        })
+      })
     }
 }
 </script>

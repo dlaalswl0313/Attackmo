@@ -2,11 +2,12 @@
     <div id="resBox">
         <img src="@/images/exitBt.svg" class="exit" @click="searchingStart()">
         <div class="searchWrap">
+            <router-link to="/MovieTitle">
             <div class="posterWrap">
                 <img src="https://file2.nocutnews.co.kr/newsroom/image/2023/08/21/202308210927594431_0.jpg" alt="poster">
             </div>
+            </router-link>
             <div class="infoWrap">
-                <router-link to="/MovieTitle">
                     <div class="title">
                         <strong>오펜하이머</strong>
                     </div>
@@ -27,7 +28,6 @@
                             <span>2023.08.15 개봉</span>
                         </div>
                     </div>
-                </router-link>
             </div>
         </div>
     </div>

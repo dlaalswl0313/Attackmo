@@ -20,7 +20,7 @@
                         <img class="vector" src="@/images/search_icon.svg" />
                         <form action="/Search" method="get">
                             <div class="place-holder">
-                                <input @focus="searchingStart()" @keypress.enter="searchMovie()"
+                                <input @focus="searchingStart()" @keypress.enter="searchMovie"
                                 type="text" name="searchWord" class="inputText searchWrite"
                                 placeholder="영화, 인물을 검색해보세요">
                             </div>
@@ -62,7 +62,7 @@
 
 <script>
 import {useRouter} from 'vue-router';
-import {ref, provide, inject} from 'vue';
+import {ref, provide, inject, onMounted} from 'vue';
 import sideMenu from '../interface/sideMenu.vue';
 import subMenu from '../interface/subMenu.vue';
 import searchBar from '../interface/searchBar.vue';
@@ -89,11 +89,13 @@ export default {
 
         const router = useRouter();
 
-        const searchMovie = () => {
-            if( window.innerWidth <= 1194 ) return
-            isSearching.value = !isSearching.value;
-            isMenuHover.value = false;
-            router.push('/Search');
+        const searchMovie = (e) => {
+            if( window.innerWidth >= 1194 ){
+                isSearching.value = !isSearching.value;
+                isMenuHover.value = false;
+                router.push('/Search');
+            }
+            e.preventDefault();
         }
 
         const sideMenuOpen = () => {
@@ -210,6 +212,7 @@ export default {
         provide('isSlideMenuToggle',isSlideMenuToggle);
         provide('sideMenuOpen',sideMenuOpen);
         provide('searchingStart',searchingStart);
+
 
         return {isSlideMenuToggle, sideMenuOpen,
               isSearching, searchingStart,
