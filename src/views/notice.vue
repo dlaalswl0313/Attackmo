@@ -49,7 +49,7 @@ export default {
 #nwrite{
     display: flex;
     margin-top: 50px;
-    margin-bottom:200px;
+    margin-bottom:100px;
     flex-direction: column;
     align-items: flex-start;
     gap: 50px;

@@ -2,8 +2,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <div id="wrap">
         <div id="nwrite">
-            <p>문의사항</p>
-            
+            <p id="title">공지사항</p>
+                <RouterLink to="/Anotice" id="write">
+                    <i class="bi bi-pencil-square"></i>
+                </RouterLink>
             <table id="list">
                 <tr>
                     <td>번호</td>
@@ -103,6 +105,24 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center; 
+    position:relative;
+}
+#title{
+    font-size:23px;
+    font-weight:700;
+    margin-bottom:50px;
+}
+#write{
+    width:50px;
+    height:50px;
+    background:#F9C041;
+    position:absolute;
+    border-radius: 50px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    top:200px;
+    right:210px;
 }
 #nwrite{
     display: flex;
@@ -115,6 +135,7 @@ export default {
     height: 1166px;
 }
 #nwrite p{font-size: 23px;font-weight: 700;}
+
 #list{
     width:1000px;
     text-align: center;

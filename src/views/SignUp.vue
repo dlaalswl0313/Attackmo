@@ -14,8 +14,8 @@
              <div id="pw_ck">
                 <label><i class="bi bi-asterisk"></i>비밀번호 확인</label>
                 <input type="password" name="password2" v-model="formData.password2">
-                <p>비밀번호는 6자리 이상의 영문과 숫자에 조합하여야합니다</p>
              </div>
+             <p>비밀번호는 6자리 이상의 영문과 숫자에 조합하여야합니다</p>
              <div id="nickname">
                 <label><i class="bi bi-asterisk"></i>활동명</label>
                 <input type="text" name="n_name" v-model="formData.n_name" id="aname">
@@ -165,7 +165,6 @@ export default {
         padding-bottom:103px;
         flex-direction: column;
         align-items: center;
-        gap: 150px;
     }
     h1{text-align: center;}
     #sign_box{
@@ -209,7 +208,7 @@ export default {
         width: 916px;
         height: 75px;
     }
-    #pw_ck p{
+    p{
         display: flex;
         width: 918px;
         height: 75px;
@@ -261,8 +260,9 @@ export default {
     label i {font-size: 23px;color:#B91646;}
     #button_box{
         display: flex;
-        width:100%;
-        padding: 25px 368px;
+        width:441px;
+        height: 66px;
+        padding: 21px 181px;
         justify-content: center;
         align-items: center;
         gap: 42px;

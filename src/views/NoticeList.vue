@@ -4,15 +4,16 @@
         <div id="nwrite">
             <div id="title">
                 <p>공지사항</p>
-                <a href="/Anotice" class="floating_button"><i class="bi bi-pencil-square"></i></a>
             </div>
             <table id="list">
-                <tr>
-                    <td>번호</td>
-                    <td>제목</td>
-                    <td>작성자</td>
-                    <td>날짜</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <td>번호</td>
+                        <td>제목</td>
+                        <td>작성자</td>
+                        <td>날짜</td>
+                    </tr>
+                </thead>
             </table> 
             <table id="list2">
                 <tr v-for="(value,i) in visiblePosts" :key="value.id" >
@@ -123,30 +124,21 @@ export default {
     justify-content: space-between;
     align-items: center;
 }
-.floating_button{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    background:gold;
-    border-radius: 100%;
-
-}
 #list{
     width:1000px;
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 3px double black;
     display: flex;
-    padding: 20px 0px;
-    align-items: flex-start;
+    border-collapse: collapse;
 }
 #list2{
     width:1000px;
     text-align: center;
     gap:20px;
 }
+
 #list2:hover{cursor: pointer;}
+
 table tr td{width:200px;padding:15px;}
 table tr td:nth-child(2){width:480px;}
 #totalPage{

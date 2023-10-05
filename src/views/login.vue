@@ -9,10 +9,9 @@
                   <input type="password" placeholder="비밀번호" v-model="user_pw" id="pw-new">
                   <!-- <button @click="togo" @keyup="togo" id="login_bt">로그인</button>   -->
                   <button @click="login()" id="login_bt">로그인</button> 
-              
                     <div id="find">
-                        <label><a href="./FindE">ID</a><a href="./FindP">/PW찾기</a></label>
-                        <label><a href="./SignUp">회원가입</a></label>
+                        <label><RouterLink to="./FindE">ID</RouterLink><RouterLink to="./FindP">/PW찾기</RouterLink></label>
+                        <label><RouterLink to="./SignUp">회원가입</RouterLink></label>
                     </div>
               </form>
               <div id="social_login">
@@ -96,8 +95,8 @@ export default {
  
 <style scoped>
 
-    a{color:black;}
-
+    a{color:#7A7979;}
+ 
     #wrap{
         display: flex;
         padding-top: 150px;
@@ -133,6 +132,8 @@ export default {
         flex-direction: column;
         align-items: flex-start;
         gap: 30px;
+        width:831px;
+        height: 372px;
     }
     #content input{
         display: flex;
@@ -143,6 +144,9 @@ export default {
         gap: 10px;
         font-size: 23px;
         font-weight: 700;
+        border-radius: 10px;
+        border:1px solid black; 
+        color:#7A7979;
     }
     #login_bt{
         display: flex;
@@ -152,16 +156,22 @@ export default {
         align-items: center;
         padding: 25px 368px;
         font-size: 23px;
-        border-radius: 8px;
+        border-radius: 10px;
         background: #F9C041;
         border:none;
         color:white;
+        gap:10px; 
+        font-weight: 700;
+        line-height: normal;
     }
     #login_bt:hover{cursor: pointer;}
     #social_login{
         display: flex;
         align-items: flex-start;
         gap: 87px;   
+        margin-bottom:40px;
+        width:506px;
+        height:111px;
     }
     .social_bt{
         font-size: 34px;
@@ -180,8 +190,8 @@ export default {
     #find label{font-size: 17px;color:#7A7979;}
     a{text-decoration: none;}
     
-    /*반응형*/
-    @media screen and (min-width: 768px) and (max-width: 991px) { 
+    /* 반응형
+    @media screen and (min-width: 490px) and (max-width: 1194px) { 
     #wrap {
       display: flex;
       width: 834px;
@@ -247,5 +257,5 @@ export default {
     }
     #find label{font-size: 17px;color:#7A7979;}
     a{text-decoration: none;}
-  }
+  } */
 </style>
