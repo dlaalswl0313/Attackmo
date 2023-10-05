@@ -251,6 +251,7 @@ export default {
         align-items: center;
         gap: 42px;
     }
+    
     .bt{
         display: flex;
         width: 433px;
