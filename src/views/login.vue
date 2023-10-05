@@ -15,9 +15,12 @@
                     </div>
               </form>
               <div id="social_login">
-                  <a href="https://www.facebook.com/?locale=ko_KR" id="facebook" class="social_bt"><img src="../images/facebook.png"></a>
-                  <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoia28ifQ%3D%3D%22%7D" id="twitter" class="social_bt"><img src="../images/twitter.svg"></a>
-                  <a href="https://www.instagram.com/accounts/login/" id="instagram" class="social_bt"><img src="../images/instagram.png"></a>
+                  <a @click="openWindow('https://www.facebook.com/?locale=ko_KR')" id="facebook" class="social_bt">
+                    <img src="../images/facebook.png"></a>
+                  <a @click ="openWindow('https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoia28ifQ%3D%3D%22%7D')" 
+                    id="twitter" class="social_bt"><img src="../images/twitter.svg"></a>
+                  <a @click="openWindow('https://www.instagram.com/accounts/login/')" 
+                    id="instagram" class="social_bt"><img src="../images/instagram.png"></a>
               </div>
       </div>
   </div>
@@ -59,7 +62,12 @@ export default {
     // })
 
     return { login, isLogin }
+  },methods:{
+    openWindow(linkUrl){
+      window.open(linkUrl,'_blank','width=600','height=600');
+    }
   }
+  
   // data: function() {
   //   return {
   //     user_email: '',
@@ -89,13 +97,14 @@ export default {
   //     this.$router.push('/');
   //   }
   // }
+ 
 }
 </script>
 
  
 <style scoped>
 
-    a{color:#7A7979;}
+    a{color:#7A7979;cursor: pointer;}
  
     #wrap{
         display: flex;
