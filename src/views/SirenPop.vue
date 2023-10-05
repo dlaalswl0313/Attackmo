@@ -53,7 +53,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 *{margin:0;padding:0; box-sizing: border-box;}
 #title{
     font-size:23px;

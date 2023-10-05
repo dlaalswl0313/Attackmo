@@ -51,7 +51,7 @@ export default {
 };
 </script>
 
- <style>
+ <style scoped>
      #wrap{
          display: flex;
          padding-top: 187px;

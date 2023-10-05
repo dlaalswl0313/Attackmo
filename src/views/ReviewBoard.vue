@@ -75,6 +75,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url('../assets/css/reviewList.css');
 </style>

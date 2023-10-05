@@ -40,7 +40,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 #wrap{
     display: flex;
     flex-direction: column;

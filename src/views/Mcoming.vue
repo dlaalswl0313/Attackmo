@@ -354,6 +354,6 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
 @import url(./Mcoming.css)
 </style>

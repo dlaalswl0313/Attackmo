@@ -151,6 +151,6 @@ export default {
     },
 };
 </script>
-<style>
+<style scoped> 
 @import url('../assets/css/writeReview.css');
 </style>

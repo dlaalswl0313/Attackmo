@@ -126,6 +126,6 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
 @import url(./MovieSearch.css);
 </style>
