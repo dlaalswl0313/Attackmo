@@ -113,16 +113,16 @@ export default {
     margin-bottom:50px;
 }
 #write{
-    width:50px;
-    height:50px;
+    width:30px;
+    height:30px;
     background:#F9C041;
     position:absolute;
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
-    line-height: 50px;
-    top:200px;
-    right:210px;
+    line-height: 30px;
+    top:210px;
+    right:390px;
 }
 #nwrite{
     display: flex;
