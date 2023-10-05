@@ -149,7 +149,7 @@ export default {
     text-align: center;
 }
 #list2:hover{cursor: pointer;}
-table tr td{width:200px;}
+table tr td{width:200px;padding:15px;}
 table tr td:nth-child(2){width:480px;}
 #totalPage{
     display: flex;
