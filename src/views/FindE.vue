@@ -82,6 +82,7 @@ export default {
         justify-content: space-between;
         align-items: center;
         border-radius: 10px;
+        border:1px solid black;
     }
     #num{ 
         width: 915px;
@@ -89,6 +90,7 @@ export default {
         display: flex;
         align-items: center;
         gap:32px;
+        
     } 
     #button_box{
         display: flex;

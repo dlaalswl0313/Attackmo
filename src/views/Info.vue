@@ -4,9 +4,9 @@
             <div class="account">
                 <div class="info">
                     <p class="nickname">@활동명</p>
-                    <a href="/MyReview" class="my_review">내가 쓴 리뷰보기 ></a>
+                    <RouterLink to="/MyReview" class="my_review">내가 쓴 리뷰보기 ></RouterLink>
                     <p class="email">email@email.com</p>
-                    <a href="/PwCheck" class="change">회원정보 변경 ></a>
+                    <RouterLink to="/If_Eck" class="change">회원정보 변경 ></RouterLink>
                 </div>
                 <div class="review">
                     <b>작성리뷰 수</b>

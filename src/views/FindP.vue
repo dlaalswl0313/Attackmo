@@ -122,12 +122,14 @@ methods: {
         border-radius: 10px;
         font-size: 23px;
         color:#7A7979;
+        border:1px solid black;
     }
     #phone{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap:15px;
+        
     }
     #phone label{
         font-size:23px;
@@ -145,6 +147,7 @@ methods: {
         height: 60px;
         padding: 13px 26px;
         border-radius: 10px;
+        border:1px solid black;
     }
     #button_box{
         display: flex;
@@ -171,6 +174,7 @@ methods: {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
+        
     }
     #find label{font-size:30px;font-weight: 700;}
     #find p{font-size:15px;font-weight: 400;color:#7A7979;}

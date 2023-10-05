@@ -23,10 +23,10 @@
              <div id="phone">
                 <label><i class="bi bi-asterisk"></i>휴대폰번호</label>
                 <div id="num">
-                  <!-- <input type="number" name="number" v-model="formData.number1" id="number1" @input="limitCharacters('number1')" placeholder="010">
+                  <input type="number" name="number" v-model="formData.number1" id="number1" @input="limitCharacters('number1')" placeholder="010">
                   -<input type="number" name="number" v-model="formData.number2" id="number2" @input="limitCharacters('number2')">
-                  -<input type="number" name="number" v-model="formData.number3" id="number3" @input="limitCharacters('number3')"> -->
-                  <input type="number" name="number" v-model="formData.number" id="number" @input="limitCharacters('number')" placeholder="01012341235">
+                  -<input type="number" name="number" v-model="formData.number3" id="number3" @input="limitCharacters('number3')">
+                  <!-- <input type="number" name="number" v-model="formData.number" id="number" @input="limitCharacters('number')" placeholder="01012341235"> -->
                 </div>       
              </div>
              <div id="button_box">
@@ -178,7 +178,7 @@ export default {
       gap: 49px 42px;
       flex-wrap: wrap;
     }
-    #email{
+    #email, #pw, #pw_ck, #nickname{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -188,21 +188,10 @@ export default {
         width: 916px;
         height: 75px;
     }
-    #pw{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
+   
     #pw input{
         width: 916px;
         height: 75px;
-    }
-    #pw_ck{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
     }
     #pw_ck input{
         width: 916px;
@@ -221,12 +210,6 @@ export default {
         color:white;
         font-weight: 700;
         font-size: 23px;
-    }
-    #nickname{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
     }
     #nickname input{
         width: 916px;
@@ -255,6 +238,7 @@ export default {
         width: 918px;
         height: 75px;
         padding: 13px 26px;
+        border:1px solid black;
     }
     label{font-size: 23px;font-weight: 700;}
     label i {font-size: 23px;color:#B91646;}
@@ -289,4 +273,21 @@ export default {
         -webkit-appearance: none;
         margin: 0;
     }
+@media (max-width:1194px) {
+    #sign_box{
+      border:none;
+      font-size:31px;
+    }
+    #email, #pw, #pw_ck, #nickname{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        width:100%;
+    }
+
+}
+@media (max-width:490px) {
+    
+}
 </style>

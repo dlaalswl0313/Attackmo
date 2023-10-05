@@ -33,6 +33,8 @@ export default{
         display: flex;
         margin-top: 140px;
         margin-bottom:260px;
+        /* padding-top: 181px;
+         padding-bottom:205px; */
         flex-direction: column;
         align-items: center;
     }
@@ -62,6 +64,10 @@ export default{
         height: 50px;
         border-radius: 10px;
         border: 1px solid black;
+        padding: 10px 40px;
+        color: #7A7979;
+        font-size: 23px;
+        font-weight: 700;
     }
     #button_bt{
         display: flex;

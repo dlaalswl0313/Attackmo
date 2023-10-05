@@ -15,7 +15,7 @@
                 <textarea v-model="content"></textarea>
             </div>
             <div id="button_box">
-                <button id="cancel" class="bt">취소</button>
+                <button @click="cancel" id="cancel" class="bt">취소</button>
                 <button @click="write" id="check" class="bt">등록하기</button>
             </div>
         </form>
@@ -50,6 +50,9 @@ export default {
         handleFileChange(event) {
             // 파일 변경 이벤트를 처리하고 선택한 파일을 저장합니다.
             this.file = event.target.files[0];
+        },
+        cancel() {
+            this.$router.go(-1);
         }
     }
 }      
@@ -101,6 +104,8 @@ export default {
         height: 33px;
         background: #fff;
         border-radius: 30px;
+        border:1px solid black;
+        cursor: pointer;
     }
     #notice{
         display: flex;
@@ -136,6 +141,7 @@ export default {
         background: none;
         font-size:15px;
         font-weight: 400;
+        cursor: pointer;
     }
     #cancel{color:red;}
     #check{background:red;color:white;}

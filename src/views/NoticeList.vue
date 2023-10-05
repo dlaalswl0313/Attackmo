@@ -1,28 +1,28 @@
 <template>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <section id="section">
     <div id="wrap">
-        <div id="nwrite">
-            <div id="title">
-                <p>공지사항</p>
-            </div>
+            <p id="title">공지사항</p>
+        <div class="main">
             <table id="list">
-                <thead>
-                    <tr>
-                        <td>번호</td>
-                        <td>제목</td>
-                        <td>작성자</td>
-                        <td>날짜</td>
-                    </tr>
-                </thead>
-            </table> 
-            <table id="list2">
-                <tr v-for="(value,i) in visiblePosts" :key="value.id" >
-                    <td>{{ i + 1 }}</td>
-                    <td @click="gonote">{{ value.title }}</td>
-                    <td>{{ value.writer }}</td>
-                    <td>{{ getCurrentDate() }}</td>
+              <thead>
+                <tr>
+                    <td class="n">번호</td>
+                    <td class="t">제목</td>
+                    <td class="w">작성자</td>
+                    <td class="d">날짜</td>
                 </tr>
-            </table>
+              </thead>
+            <tbody class="con">
+                <tr v-for="(value,i) in visiblePosts" :key="value.id" >
+                    <td class="n">{{ i + 1 }}</td>
+                    <td class="t" @click="gonote">{{ value.title }}</td>
+                    <td class="w">{{ value.writer }}</td>
+                    <td class="d">{{ getCurrentDate()}}</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
             <div id="totalPage">
                 <i @click="before()" class="bi bi-chevron-bar-left"></i>   
                 <i @click="before()" class="bi bi-chevron-compact-left"></i>
@@ -32,8 +32,9 @@
                 <i @click="next()" class="bi bi-chevron-compact-right"></i>  
                 <i @click="next()" class="bi bi-chevron-bar-right"></i>
             </div>
+
         </div>
-    </div>
+ </section>
 </template>
 <script>
 import data from '../data/notice.js'
@@ -54,15 +55,15 @@ export default {
                 return new Date(b.Date) - new Date(a.Date);
             });
         }, 
-        totalPage() {
+        totalPage() {//하단목록숫자표시
             return Math.ceil(this.data.length / this.itemsPerPage);
         }, 
-        visiblePosts() {
+        visiblePosts() { //작성폼에서 작성해서 저장하면 목록에 추가해줌
             const start = (this.currentPage - 1) * this.itemsPerPage;
             const end = start + this.itemsPerPage;
             return this.sortedData.slice(start, end);
         }, 
-        blocks() {
+        blocks() { //페이지 이동
             const blocks = [];
             for (let i = 1; i <= this.totalPage; i++) {
                 blocks.push(i);
@@ -101,46 +102,58 @@ export default {
 }
 </script>
 <style scoped>
-#wrap{
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
+*{padding:0;margin:0; box-sizing: border-box;}
+#section{
+    width:1000px;
+    margin:50px auto;
+    position:relative;
 }
-#nwrite{
-    display: flex;
-    margin-top: 50px;
-    margin-bottom:100px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 55px;
-    width:1020px;
-    height: 1166px;
-}
-#nwrite p{font-size: 23px;font-weight: 700;}
-
 #title{
+    font-size:23px;
+    font-weight:700;
+    margin-bottom:50px;
+}
+#write{
+    width:30px;
+    height:30px;
+    background:#F9C041;
+    position:absolute;
+    border-radius: 50px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    top:210px;
+    right:390px;
+}
+.main{
+    display:flex;
+    flex-direction: column;
+} 
+.list{
     width:100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-radius:10px;
+    border-collapse:collapse;
 }
-#list{
+.n{width:10%;}.t{width:60%;}.w{width:15%;}.d{width:15%;}
+.n,.w,.d{
+    text-align:center;
+}
+.t{
+    text-decoration: none;
+    color:#000;
+}
+thead tr{
+    text-align:center;
+    height:60px;
+    border-bottom:3px double #000;
+}
+.con{
     width:1000px;
-    text-align: center;
-    border-bottom: 3px double black;
-    display: flex;
-    border-collapse: collapse;
 }
-#list2{
-    width:1000px;
-    text-align: center;
-    gap:20px;
+.con tr{
+    height:50px;
+    border-bottom:1px solid #000;
 }
-
-#list2:hover{cursor: pointer;}
-
-table tr td{width:200px;padding:15px;}
-table tr td:nth-child(2){width:480px;}
 #totalPage{
     display: flex;
     width: 100%;
@@ -159,5 +172,30 @@ table tr td:nth-child(2){width:480px;}
 #pgnum{
     border:none;
     background: white;
+}
+@media (max-width:1194px) {
+    #section{width:100vw; font-size: 17px;;}
+    #wrap{width:90%;margin: 0 auto;}
+    #write{top:70px;right:10px;}
+    .main{width:100%;align-items:flex-start;}
+    #search{font-size: 17px;;}
+
+}
+@media (max-width:490px) {
+    #section{
+        width:90%;
+    }
+    .main{
+        width:100%;
+        font-size:12px;
+    }
+    #write{
+        width:25px;
+        height:25px;
+        line-height:25px;
+        font-size:15px;
+        top:70px;
+        right:0;
+    }
 }
 </style>

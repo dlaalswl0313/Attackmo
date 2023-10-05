@@ -54,19 +54,22 @@ export default {
  <style scoped>
      #wrap{
          display: flex;
-         padding-top: 187px;
-         padding-bottom:206px;
+         /* padding-top: 181px;
+         padding-bottom:205px; */
+         margin-top: 140px;
+         margin-bottom:260px;
          flex-direction: column;
          align-items: center;
          height: 900px;
      }
-     h1{text-align: center;}
+     h1{text-align: center;margin-bottom:40px;}
      #sign_box{
        display: flex;
        flex-direction: column;
        align-items: center;
        gap:20px;
        height: 507px;
+       width:500px;
      }
      #change_pw, #check_pw,#phone{
        display: flex;
@@ -76,17 +79,18 @@ export default {
        align-items: flex-start;
        gap: 20px;
      }
-     #change_pw input , #check_pw input{width:500px;height:97px;border-radius: 10px;}
+     #change_pw input , #check_pw input{width:500px;height:97px;border-radius: 10px;border:1px solid black;}
      #num{
        display: flex;
        width: 500px;
        align-items: center;
-       gap: 5px;
+       gap: 10px;
      }
      #num input{
        width: 150px;
        height: 50px;
        border-radius: 10px;
+       border:1px solid black;
      }
      label{color:#7A7979;font-size: 23px;font-weight: 700;}
      #button_box{
@@ -94,6 +98,7 @@ export default {
        width: 450px;
        justify-content: space-between;
        align-items: flex-start;
+       margin-top:40px;
     }
     .bt{
        width: 200px;
